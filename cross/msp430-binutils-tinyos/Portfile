@@ -24,6 +24,11 @@ destroot.violate_mtree  yes
 
 configure.args --target=msp430 --program-prefix=msp430-
 
+patch {
+      	# This will go away soon
+	reinplace "s|#define LEX_DOLLAR 0|#undef LEX_DOLLAR|" ${worksrcpath}/gas/config/tc-msp430.h
+}
+
 post-destroot {
 	file delete "${destroot}/${prefix}/lib/libiberty.a"
 }
