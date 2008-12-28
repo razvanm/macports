@@ -1,0 +1,48 @@
+# $Id$
+
+PortSystem	1.0
+
+name		msp430-gcc-tinyos
+version		3.2.3
+categories	lang wsn
+maintainers	razvanm@musaloiu.com
+description	MSP430 GCC for TinyOS
+homepage	http://tinyos.net/
+platforms	darwin
+
+long_description This is the MSP430 gcc currently used by TinyOS. 
+
+set gccdist	gcc-core-3.2.3.tar.bz2
+set mspdist	mspgcc-cvs.tar.gz
+
+master_sites	http://tinyos.stanford.edu/tinyos/toolchain/repo/
+distfiles	${gccdist} ${mspdist}
+#use_bzip2	yes
+distname	gcc-3.2.3
+
+destroot.violate_mtree  yes
+
+checksums	${gccdist} \
+			md5 66664a84b383ba8d68612cd89b9478b2 \
+			sha1 9afda05af6c7152ae2fa03d1b7735ea3f2ebfc2e \
+			rmd160 783ec2fbba2bfbff9ee3ba9c976b0c011768e2ce \
+		${mspdist} \
+			md5 0de9abccb19dc1f02846c4d171cd0614 \
+			sha1 e71f7fff677799d2e9b0780a73e7dbca199f0ca0 \
+			rmd160 c882cfec3787a8dd5a73c337ebb2a1ac887e6920
+
+depends_lib	port:msp430-binutils-tinyos port:gettext
+
+extract {
+	system "cd ${workpath} && bunzip2 -dc ${distpath}/${gccdist} | \
+		gnutar --no-same-owner -xf -"
+	system "cd ${workpath} && gunzip -dc ${distpath}/${mspdist} | \
+		gnutar --no-same-owner -xf -"
+}
+
+patch {
+	system "cd ${workpath} && cp -R -p mspgcc-cvs/gcc/gcc-3.3/* gcc-3.2.3"
+}
+
+configure.cflags-append -I${prefix}/include -L${prefix}/lib
+configure.args --target=msp430 --program-prefix=msp430- --prefix=${prefix}

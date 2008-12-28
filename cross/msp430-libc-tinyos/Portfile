@@ -1,0 +1,42 @@
+# $Id$
+
+PortSystem	1.0
+
+name		msp430-libc-tinyos
+version		20060801cvs
+categories	lang wsn
+maintainers	razvanm@musaloiu.com
+description	MSP430 libc for TinyOS.
+homepage	http://tinyos.net/
+platforms	darwin
+
+long_description This is the MSP430 libc currently used by TinyOS. 
+
+set mspdist	mspgcc-cvs.tar.gz
+
+master_sites	http://tinyos.stanford.edu/tinyos/toolchain/repo/
+distfiles	${mspdist}
+distname	msp430-libc
+worksrcdir	${distname}/src
+destroot.violate_mtree      yes
+
+checksums	${mspdist} \
+			md5 0de9abccb19dc1f02846c4d171cd0614 \
+			sha1 e71f7fff677799d2e9b0780a73e7dbca199f0ca0 \
+			rmd160 c882cfec3787a8dd5a73c337ebb2a1ac887e6920
+
+depends_lib	port:msp430-gcc-tinyos
+
+extract {
+	system "cd ${workpath} && gunzip -dc ${distpath}/${mspdist} | \
+		gnutar --no-same-owner -xf -"
+	system "cd ${workpath} && mv mspgcc-cvs/msp430-libc ."
+	system "cd ${workpath} && rm -rf mspgcc-cvs"
+}
+
+configure {
+	reinplace "s|/usr/local/msp430|${destroot}${prefix}|" "${worksrcpath}/Makefile"
+	file mkdir ${worksrcpath}/msp1
+	file mkdir ${worksrcpath}/msp2
+}
+

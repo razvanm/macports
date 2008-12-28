@@ -1,0 +1,24 @@
+# $Id: Portfile 36248 2008-04-24 09:46:21Z rhwood@macports.org $
+
+PortSystem 1.0
+
+name			mrxvt041
+version			0.4.1
+categories		x11
+platforms		darwin
+maintainers		nomaintainer
+description		A multi-tabbed terminal emulator for the X Window System.
+long_description	This is an older version of mrxvt.
+
+homepage		http://materm.sourceforge.net/
+master_sites		sourceforge:materm
+checksums		md5 bd41f496e11d2a318e2fa59aca056793
+distfiles		mrxvt-${version}${extract.suffix}
+
+worksrcdir		mrxvt-0.4.1
+
+build.type		gnu
+
+configure.compiler	gcc
+
+destroot.destdir	prefix=${destroot}${prefix}
