@@ -1,0 +1,37 @@
+# $Id$
+
+PortSystem	1.0
+
+name		avr-binutils-tinyos
+version		2.17
+categories	lang wsn
+maintainers	razvanm@musaloiu.com
+description	AVR binutils for TinyOS
+homepage	http://tinyos.net/
+platforms	darwin
+
+long_description The AVR binutils currently used by TinyOS. 
+
+master_sites	http://tinyos.stanford.edu/tinyos/toolchain/repo/
+distfiles	binutils-2.17.tar.bz2
+checksums	avr-binutils.patch \
+			md5     1bf7d6388f2585f2ba7587116bd9492f \
+			sha1    cf6f21fc4fc99c5b3ca5a065145619a3ed85960c \
+			rmd160  0802303557d695bf25c39952b83a16c0d05b6ee1 \
+		binutils-2.17.tar.bz2 \
+			md5     e26e2e06b6e4bf3acf1dc8688a94c0d1 \
+			sha1    a557686eef68362ea31a3aa41ce274e3eeae1ef0 \
+			rmd160  3995d7ed97f115e76ce55b4c1f5256d53559c84f
+use_bzip2	yes
+distname	binutils-2.17
+patch_sites	${master_sites}
+patchfiles	avr-binutils.patch
+
+destroot.violate_mtree  yes
+
+configure.args --target=avr --program-prefix=avr- --disable-nls
+
+post-destroot {
+	file delete "${destroot}/${prefix}/lib/libiberty.a"
+	system "rm -rf ${destroot}/${prefix}/info"
+}

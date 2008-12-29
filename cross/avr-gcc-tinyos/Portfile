@@ -1,0 +1,41 @@
+# $Id$
+
+PortSystem	1.0
+
+name		avr-gcc-tinyos
+version		4.1.2
+categories	lang wsn
+maintainers	razvanm@musaloiu.com
+description	AVR GCC for TinyOS
+homepage	http://tinyos.net/
+platforms	darwin
+
+long_description The AVR GCC currently used by TinyOS. 
+
+master_sites	http://tinyos.stanford.edu/tinyos/toolchain/repo/
+distfiles	gcc-4.1.2.tar.bz2
+use_bzip2	yes
+distname	gcc-4.1.2
+patch_sites	${master_sites}
+patchfiles	avr-gcc.patch
+
+destroot.violate_mtree  yes
+
+checksums	avr-gcc.patch \
+			md5     e814e6de5422a007094c43593deaf119 \
+			sha1    90dbc8fbc24d7793945757ff207f011916c6a416 \
+			rmd160  b2867a4e0ba76d9aa3a49ba18b1f87b20712687d \
+                gcc-4.1.2.tar.bz2 \
+                	md5     a4a3eb15c96030906d8494959eeda23c \
+                	sha1    7981b8d1b58b10ddfd7d5142eab16352d9206f3b \
+                	rmd160  7c5d78e666ccf4c2b2c3db41e2388f08b6cdf722
+
+configure.args --target=avr --program-prefix=avr- --disable-nls --enable-languages=c --disable-libssp
+
+post-destroot {
+	file delete "${destroot}/${prefix}/lib/libiberty.a"
+	system "rm -rf ${destroot}/${prefix}/info"
+	system "rm -rf ${destroot}/${prefix}/man/man7"
+	system "rm -f ${destroot}/${prefix}/man/man1/cpp.1"
+	system "rm -f ${destroot}/${prefix}/man/man1/gcov.1"
+}

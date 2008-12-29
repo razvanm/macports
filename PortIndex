@@ -1,10 +1,14 @@
-msp430-binutils-tinyos 330
-variants universal description {MSP430 binutils for TinyOS} portdir cross/msp430-binutils-tinyos homepage http://tinyos.net/ epoch 0 platforms darwin name msp430-binutils-tinyos long_description {This is the MSP430 binutils currently used by TinyOS.} maintainers razvanm@musaloiu.com categories {lang wsn} version 2.17 revision 0
-msp430-gcc-tinyos 366
-variants universal portdir cross/msp430-gcc-tinyos description {MSP430 GCC for TinyOS} homepage http://tinyos.net/ epoch 0 platforms darwin name msp430-gcc-tinyos depends_lib {port:msp430-binutils-tinyos port:gettext} maintainers razvanm@musaloiu.com long_description {This is the MSP430 gcc currently used by TinyOS.} version 3.2.3 categories {lang wsn} revision 0
-msp430-libc-tinyos 357
-variants universal portdir cross/msp430-libc-tinyos description {MSP430 libc for TinyOS.} homepage http://tinyos.net/ epoch 0 platforms darwin name msp430-libc-tinyos depends_lib port:msp430-gcc-tinyos maintainers razvanm@musaloiu.com long_description {This is the MSP430 libc currently used by TinyOS.} version 20060801cvs categories {lang wsn} revision 0
-nesc 442
-variants universal portdir lang/nesc description {Compiler for the nesC language.} homepage http://nescc.sourceforge.net/ epoch 0 platforms darwin name nesc depends_lib {port:automake port:autoconf} maintainers zaraki@gmx.com long_description {nesC is a compiler for a new language (based on C) designed to support the TinyOS project, an operating system for wireless sensor network platforms.} version 1.3.0 categories {lang wsn} revision 0
-mrxvt041 310
-variants universal description {A multi-tabbed terminal emulator for the X Window System.} portdir x11/mrxvt041 homepage http://materm.sourceforge.net/ epoch 0 platforms darwin name mrxvt041 long_description {This is an older version of mrxvt.} maintainers nomaintainer categories x11 version 0.4.1 revision 0
+avr-binutils-tinyos 370
+variants universal variant_desc {universal {Build for multiple architectures}} portdir cross/avr-binutils-tinyos description {AVR binutils for TinyOS} homepage http://tinyos.net/ epoch 0 platforms darwin name avr-binutils-tinyos maintainers razvanm@musaloiu.com long_description {The AVR binutils currently used by TinyOS.} version 2.17 categories {lang wsn} revision 0
+avr-gcc-tinyos 351
+variants universal variant_desc {universal {Build for multiple architectures}} portdir cross/avr-gcc-tinyos description {AVR GCC for TinyOS} homepage http://tinyos.net/ epoch 0 platforms darwin name avr-gcc-tinyos maintainers razvanm@musaloiu.com long_description {The AVR GCC currently used by TinyOS.} version 4.1.2 categories {lang wsn} revision 0
+avr-libc-tinyos 387
+variants universal variant_desc {universal {Build for multiple architectures}} portdir cross/avr-libc-tinyos description {AVR libc for TinyOS} homepage http://tinyos.net/ epoch 0 platforms darwin name avr-libc-tinyos depends_lib port:avr-gcc-tinyos maintainers razvanm@musaloiu.com long_description {The AVR libc currently used by TinyOS.} version 1.4.7 categories {lang wsn} revision 0
+msp430-binutils-tinyos 382
+variants universal variant_desc {universal {Build for multiple architectures}} portdir cross/msp430-binutils-tinyos description {MSP430 binutils for TinyOS} homepage http://tinyos.net/ epoch 0 platforms darwin name msp430-binutils-tinyos maintainers razvanm@musaloiu.com long_description {The MSP430 binutils currently used by TinyOS.} version 2.17 categories {lang wsn} revision 0
+msp430-gcc-tinyos 426
+variants universal variant_desc {universal {Build for multiple architectures}} portdir cross/msp430-gcc-tinyos description {MSP430 GCC for TinyOS} homepage http://tinyos.net/ epoch 0 platforms darwin name msp430-gcc-tinyos depends_lib {port:msp430-binutils-tinyos port:gettext} maintainers razvanm@musaloiu.com long_description {This is the MSP430 gcc currently used by TinyOS.} version 3.2.3 categories {lang wsn} revision 0
+msp430-libc-tinyos 417
+variants universal variant_desc {universal {Build for multiple architectures}} portdir cross/msp430-libc-tinyos description {MSP430 libc for TinyOS.} homepage http://tinyos.net/ epoch 0 platforms darwin name msp430-libc-tinyos depends_lib port:msp430-gcc-tinyos maintainers razvanm@musaloiu.com long_description {This is the MSP430 libc currently used by TinyOS.} version 20060801cvs categories {lang wsn} revision 0
+mrxvt041 370
+variants universal variant_desc {universal {Build for multiple architectures}} portdir x11/mrxvt041 description {A multi-tabbed terminal emulator for the X Window System.} homepage http://materm.sourceforge.net/ epoch 0 platforms darwin name mrxvt041 maintainers nomaintainer long_description {This is an older version of mrxvt.} version 0.4.1 categories x11 revision 0

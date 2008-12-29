@@ -34,10 +34,8 @@ checksums	${gccdist} \
 depends_lib	port:msp430-binutils-tinyos port:gettext
 
 extract {
-	system "cd ${workpath} && bunzip2 -dc ${distpath}/${gccdist} | \
-		gnutar --no-same-owner -xf -"
-	system "cd ${workpath} && gunzip -dc ${distpath}/${mspdist} | \
-		gnutar --no-same-owner -xf -"
+	system "cd ${workpath} && bunzip2 -dc ${distpath}/${gccdist} | gnutar --no-same-owner -xf -"
+	system "cd ${workpath} && gunzip -dc ${distpath}/${mspdist} | gnutar --no-same-owner -xf -"
 }
 
 patch {
@@ -46,3 +44,11 @@ patch {
 
 configure.cflags-append -I${prefix}/include -L${prefix}/lib
 configure.args --target=msp430 --program-prefix=msp430- --prefix=${prefix}
+
+post-destroot {
+	file delete "${destroot}/${prefix}/lib/libiberty.a"
+	system "rm -rf ${destroot}/${prefix}/info"
+	system "rm -rf ${destroot}/${prefix}/man/man7"
+	system "rm -f ${destroot}/${prefix}/man/man1/cpp.1"
+	system "rm -f ${destroot}/${prefix}/man/man1/gcov.1"
+}

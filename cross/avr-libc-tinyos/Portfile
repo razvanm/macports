@@ -1,0 +1,38 @@
+# $Id$
+
+PortSystem	1.0
+
+name		avr-libc-tinyos
+version		1.4.7
+categories	lang wsn
+maintainers	razvanm@musaloiu.com
+description	AVR libc for TinyOS
+homepage	http://tinyos.net/
+platforms	darwin
+
+long_description The AVR libc currently used by TinyOS. 
+
+master_sites	http://tinyos.stanford.edu/tinyos/toolchain/repo/
+distfiles	avr-libc-1.4.7.tar.bz2
+use_bzip2	yes
+distname	avr-libc-1.4.7
+patch_sites	${master_sites}
+patchfiles	sfr_defs.patch
+patch.dir	${worksrcpath}/include/avr
+
+depends_lib	port:avr-gcc-tinyos
+
+destroot.violate_mtree  yes
+
+checksums           sfr_defs.patch \
+                    md5     65e62c60d9765b2ab8a2016d36e20c59 \
+                    sha1    e682c7122e28aad6bdf765b77b38b3c6b55e51ad \
+                    rmd160  4659a52fe7b6897b8c962fc6bc747d6fc37dd759 \
+                    avr-libc-1.4.7.tar.bz2 \
+                    md5     92595072c7bff2cf152829651221329f \
+                    sha1    818bca9558949b735392a728ab1f2928593d912f \
+                    rmd160  7ea084b84616091f25539bb4e8b84174a494bb1d
+
+configure.cc avr-gcc
+configure.args --host=avr --program-prefix=avr-
+
