@@ -17,7 +17,7 @@ distfiles	gcc-4.1.2.tar.bz2
 use_bzip2	yes
 distname	gcc-4.1.2
 patch_sites	${master_sites}
-patchfiles	avr-gcc.patch
+patchfiles	avr-gcc.patch gcc-config-rs6000-host-darwin.c.diff 
 
 destroot.violate_mtree  yes
 
