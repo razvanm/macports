@@ -32,4 +32,5 @@ patch {
 post-destroot {
 	file delete "${destroot}/${prefix}/lib/libiberty.a"
 	system "rm -rf ${destroot}/${prefix}/info"
+	system "rm -rf ${destroot}/${prefix}/share/locale"
 }
