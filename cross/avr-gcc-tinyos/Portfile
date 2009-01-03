@@ -33,6 +33,8 @@ checksums	avr-gcc.patch \
                 	sha1    7981b8d1b58b10ddfd7d5142eab16352d9206f3b \
                 	rmd160  7c5d78e666ccf4c2b2c3db41e2388f08b6cdf722
 
+depends_lib	port:avr-binutils-tinyos
+
 configure.args --target=avr --program-prefix=avr- --disable-nls --enable-languages=c --disable-libssp
 
 post-destroot {
