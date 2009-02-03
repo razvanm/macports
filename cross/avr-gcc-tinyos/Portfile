@@ -19,7 +19,7 @@ distname	gcc-4.1.2
 patch_sites	${master_sites}
 patchfiles	avr-gcc.patch
 platform darwin 9 {
-                patchfiles      gcc-config-rs6000-host-darwin.c.diff 
+                patchfiles-append gcc-config-rs6000-host-darwin.c.diff
 }
 		
 destroot.violate_mtree  yes
