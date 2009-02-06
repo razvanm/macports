@@ -1,0 +1,30 @@
+PortSystem 1.0
+
+name nesc-mcs51
+version 1.3.0
+categories lang wsn
+maintainers razvanm@cs.jhu.edu
+description Compiler for the nesC language.
+homepage http://nescc.sourceforge.net/
+platforms darwin
+patchfiles nesc-1.3.0-mcs51.diff
+patch.pre_args -p1
+distname nesc-1.3.0
+
+long_description nesC is a compiler for a new language (based on C) designed \
+	to support the TinyOS project, an operating system for wireless \
+	sensor network platforms. \
+	\
+	This port contains a modified nesc that works with SDCC.
+
+master_sites sourceforge:nescc
+
+checksums md5     1abc77e718bc0b9da37c34db6b4bf444 \
+  sha1    6619495a43ecbb8705d9a72137a8b4de69651598 \
+  rmd160  eb958c57ce68e206edfb235843bd4745b7391d59
+
+depends_lib port:automake \
+  port:autoconf
+
+configure.args --exec-prefix=${prefix}
+

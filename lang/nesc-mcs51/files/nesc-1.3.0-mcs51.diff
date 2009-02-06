@@ -1,0 +1,234 @@
+diff -Naur nesc-1.3.0/src/machine/sdcc-gperf.h nesc-1.3.0.mcs51/src/machine/sdcc-gperf.h
+--- nesc-1.3.0/src/machine/sdcc-gperf.h	2008-06-18 13:23:21.000000000 -0400
++++ nesc-1.3.0.mcs51/src/machine/sdcc-gperf.h	2009-02-05 21:42:31.000000000 -0500
+@@ -50,7 +50,7 @@
+ 
+ #line 21 "machine/sdcc.gperf"
+ struct sdccword { char *name; int token; };
+-/* maximum key range = 21, duplicates = 0 */
++/* maximum key range = 24, duplicates = 0 */
+ 
+ #ifdef __GNUC__
+ __inline
+@@ -66,32 +66,32 @@
+ {
+   static unsigned char asso_values[] =
+     {
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23,  0, 23,  0, 23, 14,
+-       3, 23, 13, 23, 23,  0, 23, 23, 23, 23,
+-      13, 23,  9, 23,  6, 23,  6,  5, 23, 23,
+-       1, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
+-      23, 23, 23, 23, 23, 23
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26,  0, 26,  0, 26, 15,
++       3, 26, 15, 26, 26,  0, 26, 26, 26, 26,
++      13, 26,  9, 26,  7, 26,  6,  5, 26, 26,
++       1, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26, 26, 26, 26, 26,
++      26, 26, 26, 26, 26, 26
+     };
+   register int hval = len;
+ 
+@@ -118,24 +118,24 @@
+ {
+   enum
+     {
+-      TOTAL_KEYWORDS = 20,
++      TOTAL_KEYWORDS = 21,
+       MIN_WORD_LENGTH = 2,
+       MAX_WORD_LENGTH = 11,
+       MIN_HASH_VALUE = 2,
+-      MAX_HASH_VALUE = 22
++      MAX_HASH_VALUE = 25
+     };
+ 
+   static struct sdccword wordlist[] =
+     {
+       {""}, {""},
+-#line 40 "machine/sdcc.gperf"
++#line 41 "machine/sdcc.gperf"
+       {"at", TARGET_ATTRIBUTE1},
+       {""},
+ #line 30 "machine/sdcc.gperf"
+       {"__at", TARGET_ATTRIBUTE1},
+-#line 37 "machine/sdcc.gperf"
++#line 38 "machine/sdcc.gperf"
+       {"idata", TARGET_ATTRIBUTE0},
+-#line 35 "machine/sdcc.gperf"
++#line 36 "machine/sdcc.gperf"
+       {"xdata", TARGET_ATTRIBUTE0},
+ #line 27 "machine/sdcc.gperf"
+       {"__idata", TARGET_ATTRIBUTE0},
+@@ -143,31 +143,34 @@
+       {"__xdata", TARGET_ATTRIBUTE0},
+ #line 23 "machine/sdcc.gperf"
+       {"__data", TARGET_ATTRIBUTE0},
+-#line 42 "machine/sdcc.gperf"
++#line 43 "machine/sdcc.gperf"
+       {"using", TARGET_ATTRIBUTE1},
+ #line 31 "machine/sdcc.gperf"
+       {"__interrupt", TARGET_ATTRIBUTE1},
+ #line 32 "machine/sdcc.gperf"
+       {"__using", TARGET_ATTRIBUTE1},
+-#line 33 "machine/sdcc.gperf"
++#line 34 "machine/sdcc.gperf"
+       {"data", TARGET_ATTRIBUTE0},
+-#line 38 "machine/sdcc.gperf"
++#line 39 "machine/sdcc.gperf"
+       {"pdata", TARGET_ATTRIBUTE0},
+-#line 41 "machine/sdcc.gperf"
++#line 42 "machine/sdcc.gperf"
+       {"interrupt", TARGET_ATTRIBUTE1},
+ #line 28 "machine/sdcc.gperf"
+       {"__pdata", TARGET_ATTRIBUTE0},
+-#line 34 "machine/sdcc.gperf"
++#line 35 "machine/sdcc.gperf"
+       {"near", TARGET_ATTRIBUTE0},
+-#line 26 "machine/sdcc.gperf"
+-      {"__far", TARGET_ATTRIBUTE0},
++#line 33 "machine/sdcc.gperf"
++      {"__reentrant", TARGET_ATTRIBUTE0},
+ #line 24 "machine/sdcc.gperf"
+       {"__near", TARGET_ATTRIBUTE0},
++#line 26 "machine/sdcc.gperf"
++      {"__far", TARGET_ATTRIBUTE0},
+ #line 29 "machine/sdcc.gperf"
+       {"__code", TARGET_ATTRIBUTE0},
+-#line 39 "machine/sdcc.gperf"
++#line 40 "machine/sdcc.gperf"
+       {"code", TARGET_ATTRIBUTE0},
+-#line 36 "machine/sdcc.gperf"
++      {""}, {""},
++#line 37 "machine/sdcc.gperf"
+       {"far", TARGET_ATTRIBUTE0}
+     };
+ 
+diff -Naur nesc-1.3.0/src/machine/sdcc.c nesc-1.3.0.mcs51/src/machine/sdcc.c
+--- nesc-1.3.0/src/machine/sdcc.c	2008-01-22 14:45:49.000000000 -0500
++++ nesc-1.3.0.mcs51/src/machine/sdcc.c	2009-02-05 21:42:31.000000000 -0500
+@@ -71,6 +71,6 @@
+   NULL, sdcc_init,
+   sdcc_token,
+   NULL,				/* Keil C special */
+-  NULL,				/* global cpp support */
++  gcc_global_cpp_init,		/* global cpp support */
+   NULL				/* per-file cpp support */
+ };
+diff -Naur nesc-1.3.0/src/machine/sdcc.gperf nesc-1.3.0.mcs51/src/machine/sdcc.gperf
+--- nesc-1.3.0/src/machine/sdcc.gperf	2007-05-24 19:27:40.000000000 -0400
++++ nesc-1.3.0.mcs51/src/machine/sdcc.gperf	2009-02-05 21:42:31.000000000 -0500
+@@ -30,6 +30,7 @@
+ __at, TARGET_ATTRIBUTE1
+ __interrupt, TARGET_ATTRIBUTE1
+ __using, TARGET_ATTRIBUTE1
++__reentrant, TARGET_ATTRIBUTE0
+ data, TARGET_ATTRIBUTE0
+ near, TARGET_ATTRIBUTE0
+ xdata, TARGET_ATTRIBUTE0
+diff -Naur nesc-1.3.0/src/nesc-gcc.c nesc-1.3.0.mcs51/src/nesc-gcc.c
+--- nesc-1.3.0/src/nesc-gcc.c	2008-01-23 18:59:33.000000000 -0500
++++ nesc-1.3.0.mcs51/src/nesc-gcc.c	2009-02-05 21:42:31.000000000 -0500
+@@ -230,6 +230,9 @@
+     errorf = gcc_error_template;
+   *gcc_error_file = errorf;
+ 
++  close(creat("null.c", 0666));
++  printf("DEBUG: target_compiler: %s\n", target_compiler);
++
+   if ((gcc_pid = fork()) == 0)
+     {
+       const char **argv;
+@@ -313,13 +316,17 @@
+   int opt = 0, i;
+   struct extra_option *extras;
+ 
++  argv[opt++] = "-Wp";
+   argv[opt++] = "-v";
++/*
+   argv[opt++] = "-x";
+   argv[opt++] = "c";
+   if (flag_mingw_gcc)
+     argv[opt++] = "nul:";
+   else
+     argv[opt++] = "/dev/null";
++*/
++  argv[opt++] = "null.c";
+   argv[opt++] = "-E";
+   argv[opt++] = "-dM";
+   if (flag_nostdinc)
+diff -Naur nesc-1.3.0/src/nesc-network.c nesc-1.3.0.mcs51/src/nesc-network.c
+--- nesc-1.3.0/src/nesc-network.c	2008-07-14 13:27:11.000000000 -0400
++++ nesc-1.3.0.mcs51/src/nesc-network.c	2009-02-05 21:42:31.000000000 -0500
+@@ -410,7 +410,7 @@
+       else
+ 	{
+ 	  set_location(vd->location);
+-	  output("typedef struct { unsigned char data[%d]; } __attribute__((packed)) %s;",
++	  output("typedef struct { unsigned char d[%d]; } __attribute__((packed)) %s;",
+ 		 (int)type_size_int(basetype), vd->ddecl->name);
+ 	}
+       return TRUE;
+diff -Naur nesc-1.3.0/tools/deputy_nodeputy.h nesc-1.3.0.mcs51/tools/deputy_nodeputy.h
+--- nesc-1.3.0/tools/deputy_nodeputy.h	2008-07-10 18:32:24.000000000 -0400
++++ nesc-1.3.0.mcs51/tools/deputy_nodeputy.h	2009-02-05 22:03:04.000000000 -0500
+@@ -5,16 +5,16 @@
+ 
+ #define __DEPUTY_UNUSED__                      __attribute__((unused))
+ 
+-struct @nonnull @deputy_scope() { }; 
++struct @nonnull @deputy_scope() { int dummy; }; 
+ struct @bnd @deputy_scope() { void *lo, *hi; }; 
+ struct @bnd_nok @deputy_scope() { void *lo, *hi; }; 
+ struct @count @deputy_scope() { int n; }; 
+ struct @count_nok @deputy_scope() { int n; }; 
+-struct @one @deputy_scope() { }; 
+-struct @one_nok @deputy_scope() { };
++struct @one @deputy_scope() { int dummy; }; 
++struct @one_nok @deputy_scope() { int dummy; };
+ struct @dmemset @deputy_scope() { int a1, a2, a3; };
+ struct @dmemcpy @deputy_scope() { int a1, a2, a3; };
+-struct @nts @deputy_scope() { }; 
++struct @nts @deputy_scope() { int dummy; }; 
+ 
+ #define NONNULL                                @nonnull()
+ #define BND(x,y)                               @bnd(x,y)
