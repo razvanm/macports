@@ -22,7 +22,7 @@ distname	binutils-2.17
 
 destroot.violate_mtree  yes
 
-configure.args --target=msp430 --program-prefix=msp430-
+configure.args --target=msp430 --program-prefix=msp430- --disable-werror
 
 patch {
       	# This will go away soon

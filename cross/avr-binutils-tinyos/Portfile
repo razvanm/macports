@@ -29,7 +29,7 @@ patchfiles	avr-binutils.patch
 
 destroot.violate_mtree  yes
 
-configure.args --target=avr --program-prefix=avr- --disable-nls
+configure.args --target=avr --program-prefix=avr- --disable-nls --disable-werror
 
 post-destroot {
 	file delete "${destroot}/${prefix}/lib/libiberty.a"
