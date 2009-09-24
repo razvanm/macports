@@ -21,6 +21,13 @@ patchfiles	avr-gcc.patch
 platform darwin 9 {
                 patchfiles-append gcc-config-rs6000-host-darwin.c.diff
 }
+
+# the generated compiler doesn't accept -arch
+if {[info exists build_arch] && ${os.platform} == "darwin"} {
+    configure.cc_archflags
+    configure.cxx_archflags
+    configure.objc_archflags
+}
 		
 destroot.violate_mtree  yes
 
