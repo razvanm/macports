@@ -1,0 +1,35 @@
+# $Id$
+
+PortSystem	1.0
+
+name		avrdude-tinyos
+version		5.4
+categories	lang wsn
+maintainers	razvanm@musaloiu.com
+description	AVRDUDE for TinyOS.
+homepage	http://tinyos.net/
+platforms	darwin
+
+long_description AVRDUDE is an open source utility to download/upload/manipulate \
+    the ROM and EEPROM contents of AVR microcontrollers using the in-system \
+    programming technique (ISP). This is the TinyOS version that has support \
+    for MIB510/MIB520. 
+
+master_sites	http://tinyos.stanford.edu/tinyos/toolchain/repo/
+distfiles	avrdude-${version}.tar.bz2
+checksums           avrdude-5.4-mib510.patch \
+                    md5     e4b13456c6f7d97a2117ba33d9a5929c \
+                    sha1    9dc377d7076970850fa8839c3a7dfbce267ae70e \
+                    rmd160  189f6a0b5a0e78e59270dea48ec6ddea82ca1dec \
+                    avrdude-5.4.tar.bz2 \
+                    md5     e69b2791beb1b6a292e0f11f5577ae92 \
+                    sha1    c064135b8108d18d40aced12bc7653d8becf6901 \
+                    rmd160  4e5f616751ffd42dc3deb7757805f3ea8705bf9c
+
+use_bzip2	yes
+distname	avrdude-${version}
+patch_sites	${master_sites}
+patchfiles	avrdude-5.4-mib510.patch
+patch.pre_args	-p1
+
+configure.args --exec-prefix=${prefix}
