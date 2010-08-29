@@ -3,7 +3,7 @@
 PortSystem 1.0
 
 name nesc
-version 1.3.1
+version 1.3.2
 categories lang wsn
 maintainers razvan@musaloiu.com
 description Compiler for the nesC language.
@@ -16,16 +16,12 @@ long_description nesC is a compiler for a new language (based on C) designed \
 
 master_sites sourceforge:nescc
 
-checksums           md5     e32217f600e0d9619f3c92e2f922d400 \
-                    sha1    58f799c4c342b4949dd82790b2c09fb12a4e357a \
-                    rmd160  61e15d942a1c066e63af3f0b3f9259be274154d3
+checksums           md5     9daf68f3d7f4a188d4de9d50c8bc3188 \
+                    sha1    11a8bf0b0e14d410faef34815b6a62cdb071fc1e \
+                    rmd160  de4a435578a1aab515a0aa5bd5c378c0ca7b97e3
 
 depends_lib port:automake \
   port:autoconf
 
 configure.args --exec-prefix=${prefix}
 
-platform darwin 10 {
-  patchfiles nesc-1.3.1-src-configure.diff
-  patch.pre_args -p1
-}
