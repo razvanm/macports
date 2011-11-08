@@ -1,7 +1,7 @@
 Install steps
 -------------
 
-1. `cd /User/user`<br />`git clone git://hinrg.cs.jhu.edu/git/ports.git`
+1. `cd /User/user`<br />`git clone git://github.com/razvanm/macports.git`
 2. Edit `/opt/local/etc/macports/sources.conf` to include a line: file:///Users/user/ports
 3. `sudo port install msp430-binutils-tinyos msp430-gcc-tinyos msp430-libc-tinyos` _(for MSP430)_
 4. `sudo port install avr-binutils-tinyos avr-gcc-tinyos avr-libc-tinyos avrdude-tinyos` _(for AVR)_
