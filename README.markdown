@@ -12,7 +12,7 @@ Install steps
 
 * Sep 26, 2011: add nesc 1.3.3.
 * Jul 31, 2010: add nesc 1.3.2 rc.
-* Dec 2, 2009: add the mcport for avrdude-tinyos. This is used by IRIS.
+* Dec 2, 2009: add the macport for avrdude-tinyos. This is used by IRIS.
 * Sep 18, 2009: add the macport for nesc 1.3.1 and fix the binutils for MSP430 and AVR for Snow Leopard. The GCC for AVR does not compile properly yet.
 * Dec 29, 2008: add the ports for AVR binutils, gcc and libc. Small tweaks for MSP430.
 * Dec 28, 2008: add the ports for MSP430 binutils, gcc and libc.
